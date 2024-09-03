@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/messages", (req, res) => {
+  console.log(req.body);
   res.json(req.body); // sending the thing we got back, like repeating a phone number to make sure you wrote it down correctly
 });
 
