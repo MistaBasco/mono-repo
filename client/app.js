@@ -1,4 +1,4 @@
-const messageForm = document.getElementById("message-form");
+const messageForm = document.querySelector("form");
 
 async function handleSubmit(event) {
   event.preventDefault();
