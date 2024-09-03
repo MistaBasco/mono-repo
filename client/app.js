@@ -1,4 +1,4 @@
-const messageForm = document.querySelector("#message-form");
+const messageForm = document.getElementById("message-form");
 
 async function handleSubmit(event) {
   event.preventDefault();
@@ -6,7 +6,8 @@ async function handleSubmit(event) {
   //do stuff with form data here
 
   const formData = new FormData(messageForm);
-  const message = formData.get("message");
+  //   const message = formData.get("message");
+  const message = Object.fromEntries(formData);
 
   const promise = await fetch(
     "https://mono-repo-8mku.onrender.com:3000/messages",
