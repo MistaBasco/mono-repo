@@ -1,14 +1,15 @@
 import express from "express";
+import cors from "cors";
 const app = express();
+app.use(cors());
 app.use(express.json());
 
-app.get("/", (request, response) => {
-  response.json("you are looking at my root route, how roude!");
+app.get("/", (req, res) => {
+  res.json("you are looking at my root route, how roude!");
 });
 
-app.post("/messages", function (req, res) {
-  console.log("req.body:", req.body);
-  res.json({ status: "Message Received!" });
+app.post("/messages", (req, res) => {
+  res.json(req.body);
 });
 
 app.listen(8080, () => {
